@@ -79,7 +79,7 @@ a.active {
 }
 
 .homepage div img {
-    border: 5px solid yellowgreen;
+    border: 5px solid rgb(166, 251, 63);
     border-radius: 8px;
     width: 100%;
     object-fit: cover;
@@ -147,7 +147,7 @@ h1 {
 }
 
 .card-collection {
-    background-color: yellowgreen;
+    background-color: rgb(166, 251, 63);
     width: 25%;
     height: 100%;
     margin-left: 10px;
@@ -207,7 +207,7 @@ h1 {
 /****************************************** Creatorpage ********************************************/
 
 .card-creator {
-    background-color: yellowgreen;
+    background-color: rgb(166, 251, 63);
     width: 33.33%;
     margin-left: 10px;
     border-radius: 20px;
@@ -243,7 +243,8 @@ h1 {
 }
 
 .filter-creator {
-    text-align: center;
+    text-align: left;
+    margin-left: 30px;
     margin-top: 45px;
     margin-bottom: 45px;
 }
@@ -286,7 +287,8 @@ h1 {
 
 .card-sales {
     margin-left: 10px;
-    background-color: yellowgreen;
+    background-color: rgb(166, 251, 63);
+    ;
     width: 100%;
     border-radius: 20px;
 }
