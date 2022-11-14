@@ -14,8 +14,6 @@ body {
 /****************************************** Top-navigation-Menu ********************************************/
 
 
-
-
 nav li {
     list-style: none;
     display: inline-block;
@@ -25,7 +23,7 @@ nav li {
 nav ul li a {
     text-decoration: none;
     color: black;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 nav ul li a:hover {
@@ -48,9 +46,6 @@ nav ul li a:hover {
     justify-content: space-around;
 }
 
-.right-nav {
-    margin-left: 110px;
-}
 
 .logo {
     margin-top: 15px;
@@ -84,7 +79,8 @@ a.active {
 }
 
 .homepage div img {
-    border-radius: 20px;
+    border: 5px solid yellowgreen;
+    border-radius: 8px;
     width: 100%;
     object-fit: cover;
 }
@@ -113,11 +109,11 @@ a.active {
     padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 15px;
+    border-radius: 5px;
     background-color: black;
     font-size: 14px;
     font-weight: 600;
-
-    color: yellowgreen;
+    color: white;
 }
 
 
@@ -156,7 +152,7 @@ h1 {
     height: 100%;
     margin-left: 10px;
     border-radius: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     margin-bottom: 20px;
 }
 
@@ -173,20 +169,39 @@ h1 {
 }
 
 .card-collection p {
-    font-size: 14px;
+    font-size: 12px;
     margin-left: 10px;
 }
 
-#filtering {
-    text-align: center;
-    justify-content: space-between;
-    margin-top: 35px;
-    margin-bottom: 50px;
+.filter {
+    text-align: right;
+    margin-right: 60px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+
+
+.filter a {
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    background-color: black;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
 }
 
 .cards {
     display: flex;
+    justify-content: space-evenly;
 }
+
+
 
 
 /****************************************** Creatorpage ********************************************/
@@ -227,10 +242,81 @@ h1 {
     margin-left: 90px;
 }
 
+.filter-creator {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+
+.filter-creator a {
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    background-color: black;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+}
 
 
 
 /****************************************** Salespage ********************************************/
+
+
+.card-sales img {
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.info-sales {
+    display: flex;
+}
+
+.info-sales h3 {
+    margin-left: 80px;
+}
+
+.card-sales {
+    margin-left: 10px;
+    background-color: yellowgreen;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.card-sales p {
+    margin-top: -20px;
+    margin-left: 160px;
+}
+
+
+.filter-sales {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+
+.filter-sales a {
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    background-color: black;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+}
 
 
 
