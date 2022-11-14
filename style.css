@@ -51,6 +51,10 @@ nav ul li a:hover {
     margin-top: 15px;
 }
 
+ span {
+    color: rgb(166, 251, 63);
+}
+
 a.active {
     text-decoration: none;
     color: black;
@@ -92,9 +96,10 @@ a.active {
 
 .text h2 {
     font-size: 70px;
-    line-height: 65px;
-
+    line-height: 65px;  
 }
+
+
 
 .text h3 {
 
