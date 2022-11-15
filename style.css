@@ -51,7 +51,7 @@ nav ul li a:hover {
     margin-top: 15px;
 }
 
- span {
+span {
     color: rgb(166, 251, 63);
 }
 
@@ -96,7 +96,7 @@ a.active {
 
 .text h2 {
     font-size: 70px;
-    line-height: 65px;  
+    line-height: 65px;
 }
 
 
@@ -146,6 +146,9 @@ a.active {
 }
 
 
+
+
+
 /****************************************** Collectionpage ********************************************/
 h1 {
     text-align: center;
@@ -177,6 +180,19 @@ h1 {
     font-size: 12px;
     margin-left: 10px;
 }
+
+.card-collection-rank_like {
+    display: flex;
+}
+
+
+.card-collection-rank_like img {
+    width: 30px;
+    height: 30px;
+    margin-left: 190px;
+}
+
+
 
 .filter {
     text-align: right;
@@ -247,6 +263,20 @@ h1 {
     margin-left: 90px;
 }
 
+.card-creator-like {
+    display: flex;
+
+}
+
+.card-creator-like img {
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 50px;
+
+}
+
+
 .filter-creator {
     text-align: left;
     margin-left: 30px;
@@ -275,8 +305,8 @@ h1 {
 
 
 .card-sales img {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     border-radius: 70px;
     margin-top: 10px;
     margin-left: 10px;
@@ -287,7 +317,7 @@ h1 {
 }
 
 .info-sales h3 {
-    margin-left: 80px;
+    margin-left: 47px;
 }
 
 .card-sales {
@@ -299,7 +329,7 @@ h1 {
 }
 
 .card-sales p {
-    margin-top: -20px;
+    margin-top: -54px;
     margin-left: 160px;
 }
 
@@ -326,6 +356,13 @@ h1 {
 }
 
 
+.info-sales-price_like img {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    margin-left: 90%;
+    margin-bottom: 10px;
+}
 
 
 /****************************************** Likepage ********************************************/
