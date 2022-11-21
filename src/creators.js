@@ -6,24 +6,27 @@ const options = {
     }
 };
 
+fetchData()
+
+function fetchData() {
 
 
-fetch('https://binance-nft.p.rapidapi.com/top-creators/?day=0', options)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.data.list)
-        data.data.list.forEach(el => {
-            const name = el.nickName
-            const image = el.avatarUrl
-            const sales = el.salesCount
-            const rank = el.rank
-            const items = el.itemsCount
-            const fans = el.fansCount
+    fetch('https://binance-nft.p.rapidapi.com/top-creators/?day=0', options)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.data.list)
+            data.data.list.forEach(el => {
+                const name = el.nickName
+                const image = el.avatarUrl
+                const sales = el.salesCount
+                const rank = el.rank
+                const items = el.itemsCount
+                const fans = el.fansCount
 
-            renderCreators(name, image, sales, rank, items, fans)
+                renderCreators(name, image, sales, rank, items, fans)
+            })
         })
-    })
-
+}
 
 function renderCreators(name, image, sales, rank, items, fans) {
     const htmlString = document.getElementById('creators')

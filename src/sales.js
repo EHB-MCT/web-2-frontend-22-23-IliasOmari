@@ -7,20 +7,25 @@ const options = {
 };
 
 
+fetchData()
 
-fetch('https://binance-nft.p.rapidapi.com/top-sales/?day=0', options)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.data.list)
-        data.data.list.forEach(el => {
-            const title = el.title
-            const image = el.coverUrl
-            const price = el.price
+function fetchData() {
 
-            renderSales(title, price, image)
+
+    fetch('https://binance-nft.p.rapidapi.com/top-sales/?day=0', options)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.data.list)
+            data.data.list.forEach(el => {
+                const title = el.title
+                const image = el.coverUrl
+                const price = el.price
+
+                renderSales(title, price, image)
+            })
         })
-    })
 
+}
 
 function renderSales(title, price, image) {
     const htmlString = document.getElementById('sales')
