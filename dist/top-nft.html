@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="../src/sales.js" type="module"> </script>
-    <title>Top Sales</title>
+    <script src="../src/nft.js" type="module"> </script>
+    <title>Top NFTs</title>
 </head>
 
 <body>
@@ -25,10 +25,10 @@
             <nav>
 
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home.html">Home</a></li>
                     <li><a href="collections.html">Collections</a></li>
+                    <li><a href="top-nft.html"> Top NFTs</a></li>
                     <li><a href="top-creators.html"> Top Creators</a></li>
-                    <li><a href="top-sales.html"> Top Sales</a></li>
 
 
 
@@ -63,29 +63,21 @@
     <!-------------------Salespage----------------->
 
     <header>
-        <h1>Top Sales</h1>
+        <h1>Top NFTs</h1>
     </header>
+
 
 
     <div class="filter-sales">
 
-        <a href="#"> Last 24h</a>
-        <a href="#"> Last week</a>
-        <a href="#"> Last month</a>
+        <a href="#" id="All"> All</a>
+        <a href="#" id="sortExpensive"> Expensivest NFTs</a>
+        <a href="#" id="sortCheap"> Cheapest NFTs</a>
 
     </div>
 
-    <div class="cardss" id="sales"> 
 
-
-
-
-
-
-        
-    </div>
-
-    </div>
+    <div class="cardss" id="sales"></div>
 
 </body>
 

@@ -1,7 +1,7 @@
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'b97d1020d2msh434627b82e6f637p1e1b9djsnee3cc160836c',
+        'X-RapidAPI-Key': '533a598ecbmsh0e7684e4f0d8f14p186d29jsn4993a4cb8b25',
         'X-RapidAPI-Host': 'binance-nft.p.rapidapi.com'
     }
 };
@@ -50,3 +50,23 @@ function renderCollections(title, price, rank, image) {
 
     htmlString.innerHTML += html
 }
+
+
+const renderAll = document.getElementById('All')
+renderAll.addEventListener('click', (e) => {
+    renderCollections()
+})
+const renderThree = document.getElementById('top3')
+renderThree.addEventListener('click', (e) => {
+    console.log('clicked for top 3')
+})
+
+const renderTen = document.getElementById('top10')
+renderTen.addEventListener('click', (e) => {
+    console.log('clicked for top 10')
+})
+
+const renderTwenty = document.getElementById('top20')
+renderTen.addEventListener('click', (e) => {
+    console.log('clicked for top 20')
+})
