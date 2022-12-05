@@ -164,8 +164,7 @@ h1 {
     height: 100%;
     margin-left: 10px;
     border-radius: 10px;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .card-collection h2 {
@@ -186,16 +185,19 @@ h1 {
 
 .card-collection p {
     font-size: 14px;
-    margin-left: 10px;
+    color: gray;
+    font-weight: 100;
+    margin-left: 15px;
 }
 
 .card-collection h3 {
     font-size: 16px;
-    font-weight: bold;
-    margin-left: 10px;
-    color: #A6FB3F;
-    margin-top: -10px;
+    color: gray;
+    font-weight: 100;
+    margin-left: 15px;
+    margin-top: -22px;
 }
+
 
 
 .card-collection-rank_like {
@@ -207,16 +209,18 @@ h1 {
 .card-collection-rank_like img {
     width: 25px;
     height: 25px;
-    margin-left: 161px;
+    margin-left: 150px;
+    cursor: pointer;
 }
 
 
 
 .filter {
     text-align: right;
-    margin-right: 60px;
-    margin-top: 45px;
-    margin-bottom: 45px;
+    margin-right: 87px;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    cursor: pointer;
 }
 
 
@@ -234,9 +238,14 @@ h1 {
     text-decoration: none;
 }
 
+.filter a.active {
+    color: white;
+    background-color: #A6FB3F;
+}
+
 .cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 
 }
@@ -284,6 +293,7 @@ h1 {
 .card-creator-img h2 {
     margin-top: 27px;
     margin-left: 32px;
+    width: 150px;
 }
 
 .card-creator-like {
@@ -298,15 +308,20 @@ h1 {
     margin-top: 32px;
     margin-left: 48px;
     border: none;
+    cursor: pointer;
 
 }
 
 
+
+
+
 .filter-creator {
-    text-align: left;
-    margin-left: 30px;
-    margin-top: 45px;
-    margin-bottom: 45px;
+    text-align: right;
+    margin-right: 87px;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    cursor: pointer;
 }
 
 
@@ -323,9 +338,16 @@ h1 {
     text-decoration: none;
 }
 
+.filter-creator a.active {
+    color: white;
+    background-color: #A6FB3F;
+}
 
 
-/****************************************** Salespage ********************************************/
+
+
+
+/****************************************** NFTpage ********************************************/
 
 
 .card-sales img {
@@ -339,6 +361,7 @@ h1 {
 
 .info-sales {
     display: flex;
+    height: 175px;
 }
 
 .info-sales img {
@@ -346,8 +369,9 @@ h1 {
 }
 
 .info-sales h2 {
-    margin-left: 47px;
+    margin-left: 15px;
 }
+
 
 .card-sales {
 
@@ -356,18 +380,22 @@ h1 {
 }
 
 .card-sales p {
-    margin-top: -9px;
+    margin-top: -63px;
     margin-left: 160px;
     color: #A6FB3F;
     font-weight: bold;
+    width: 80px;
 }
 
 
 .filter-sales {
-    text-align: center;
-    margin-top: 45px;
-    margin-bottom: 45px;
+    text-align: right;
+    margin-right: 87px;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    cursor: pointer;
 }
+
 
 
 .filter-sales a {
@@ -384,12 +412,18 @@ h1 {
     text-decoration: none;
 }
 
+.filter-sales a.active {
+    color: white;
+    background-color: #A6FB3F;
+}
+
+
 .info-sales-price_like {
     display: flex;
 }
 
 .info-sales-price_like img {
-    margin-top: -8px;
+    margin-top: -63px;
     width: 25px;
     height: 25px;
     margin-left: 80px

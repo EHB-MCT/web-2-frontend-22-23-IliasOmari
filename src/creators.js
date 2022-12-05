@@ -2,7 +2,7 @@ let create = [];
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '533a598ecbmsh0e7684e4f0d8f14p186d29jsn4993a4cb8b25',
+        'X-RapidAPI-Key': 'da69d0b0e9mshf63f749c6d62bd4p108f52jsnfef20042e335',
         'X-RapidAPI-Host': 'binance-nft.p.rapidapi.com'
     }
 };
@@ -131,4 +131,13 @@ const renderAll = document.getElementById('All')
 renderAll.addEventListener('click', (e) => {
     console.log('list of all creators')
     fetchData()
+})
+
+let buttons = document.getElementsByName('filter')
+
+buttons.forEach(button => {
+    button.addEventListener('click', function () {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active')
+    })
 })

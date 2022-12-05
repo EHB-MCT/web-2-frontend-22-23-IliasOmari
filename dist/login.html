@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="../src/login.js" type="module"> </script>
+    <script src="./../src/login.js" type="module" defer></script>
     <title>My account</title>
 </head>
 
@@ -41,12 +41,6 @@
         </div>
 
 
-        <!-- <div class="searchbar">
-            <form id="searching">
-                <input type="search" placeholder="Search" id="search">
-            </form>
-        </div> -->
-
         <div class="right-nav">
             <nav>
                 <ul>
@@ -65,7 +59,7 @@
     <div class="container">
         <h1>My Account</h1>
         <a href="#" class="button-login" id="btn-login">Login</a>
-        <a href="register.html" class="button-register" id="logbtn">Sign up</a>
+        <a href="register.html" class="button-register" id="registerbtn">Sign up</a>
 
     </div>
 
@@ -74,9 +68,9 @@
             <img src="./icons/close.png" alt="close" class="closebtn">
             <img src="./icons/user (3).png" alt="user">
 
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <a href="collections.html" class="button-login-in" id="logbtn">Login</a>
+            <input id="inputEmail" type="text" placeholder="email">
+            <input id="inputPassword" type="password" placeholder="Password">
+            <button type="submit" class="button-login-in" id="logbtn">Login</button>
 
         </div>
     </div>

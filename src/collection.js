@@ -1,9 +1,9 @@
 let collection = [];
-
+let sortedCollection = [];
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '533a598ecbmsh0e7684e4f0d8f14p186d29jsn4993a4cb8b25',
+        'X-RapidAPI-Key': 'da69d0b0e9mshf63f749c6d62bd4p108f52jsnfef20042e335',
         'X-RapidAPI-Host': 'binance-nft.p.rapidapi.com'
     }
 };
@@ -16,6 +16,8 @@ function fetchData() {
     fetch('https://binance-nft.p.rapidapi.com/top-collections/?day=0', options)
         .then(response => response.json())
         .then(data => {
+            collection = []
+            sortedCollection = []
             console.log(data.data.list)
             data.data.list.forEach(el => {
                 const title = el.title
@@ -29,8 +31,9 @@ function fetchData() {
                     rank: rank
                 }
                 collection.push(nft)
-                renderCollections(title, price, rank, image)
+                sortedCollection.push(nft)
             })
+            renderCollections()
 
 
         })
@@ -38,30 +41,52 @@ function fetchData() {
 
 
 
-function renderCollections(title, price, rank, image) {
+function renderCollections() {
     const htmlString = document.getElementById('cards')
+    const sort = sortedCollection.sort((a, b) => {
+        if (a.title > b.title) {
+            return 1
+        } else {
+
+            return -1
+        }
+    })
+    console.log(sort)
     let html = ''
 
-    html += ` <div class="card-collection">
+    sort.forEach(el => {
+        html += ` <div class="card-collection">
         <div class="card-collection-img">
-            <img src="${image}" alt="test">
+            <img src="${el.image}" alt="test">
         </div>
 
         <div class="card-collection-title">
-            <h2>${title}</h2>
+            <h2>${el.title}</h2>
         </div>
         <div class="card-collection-price">
-            <h3>${price} BUSD</h3>
+            <h3>${el.price} BUSD</h3>
         </div>
         <div class="card-collection-rank_like">
-            <p>#${rank}</p>
+            <p>#${el.rank}</p>
             <img src="./icons/love.png" alt="like">
         </div>
 
     </div>`
+    })
 
     htmlString.innerHTML += html
 }
+
+
+let buttons = document.getElementsByName('filter')
+
+buttons.forEach(button => {
+    button.addEventListener('click', function () {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active')
+    })
+})
+
 
 
 const renderAll = document.getElementById('All')
