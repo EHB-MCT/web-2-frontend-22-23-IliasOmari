@@ -78,12 +78,12 @@ a.active {
 .homepage {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .homepage div {
-    width: 40%;
+    width: 45%;
 }
 
 .homepage div img {

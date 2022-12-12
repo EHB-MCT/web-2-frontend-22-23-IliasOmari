@@ -28,21 +28,22 @@ logBtn.addEventListener('click', (e) => {
 
         })
         .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            if (data.message == "sucessfully logged in !") {
-                alert(data.message)
+        .then(result => {
+            //creating alerts for the user
+            if (result.message == "You are successfully logged in!") {
+                sessionStorage.setItem('user', JSON.stringify(result.data))
+                alert(result.message)
                 window.location.href = "index.html"
 
-            } else if (data.message == "No account with this email! Make sure you register first.") {
-                alert(data.message)
+            } else if (result.message == "No account with this email! Make sure you register first.") {
+                alert(result.message)
 
-            } else if (data.message == " Missing mail, password") {
-                alert(data.message)
+            } else if (result.message == " Missing mail, password") {
+                alert(result.message)
 
 
-            } else if (data.message == "Enter the correct password for this email") {
-                alert(data.message)
+            } else if (result.message == "Incorrect password for this email") {
+                alert(result.message)
 
             }
         })

@@ -37,7 +37,7 @@ function fetchData() {
 }
 
 
-const button = document.getElementsByName('btn')
+const button = document.getElementsByName('filter')
 button.forEach(btn => {
     btn.addEventListener('click', e => {
         let value = e.target.id
@@ -133,6 +133,7 @@ renderAll.addEventListener('click', (e) => {
     fetchData()
 })
 
+
 let buttons = document.getElementsByName('filter')
 
 buttons.forEach(button => {
@@ -140,4 +141,5 @@ buttons.forEach(button => {
         buttons.forEach(btn => btn.classList.remove('active'));
         this.classList.add('active')
     })
+
 })

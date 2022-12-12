@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="../src/script.js" type="module"> </script>
+    <script src="../src/script.js" type="module"></script>
+    <script src="./../src/auth.js" defer type="module"></script>
     <title>Likes</title>
 </head>
 
@@ -40,16 +41,10 @@
         </div>
 
 
-        <!-- <div class="searchbar">
-            <form id="searching">
-                <input type="search" placeholder="Search" id="search">
-            </form>
-        </div> -->
-
         <div class="right-nav">
             <nav>
                 <ul>
-                    <li><a href="likes.html"><img src="./icons/love.png" alt="like"></a></li>
+                    <li><a id="nav-like" href="likes.html"><img src="./icons/love.png" alt="like"></a></li>
                     <li><a href="login.html"><img src="./icons/user-interface.png" alt="login"></a></li>
                 </ul>
             </nav>

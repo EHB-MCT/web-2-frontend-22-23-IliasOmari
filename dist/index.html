@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NFT Universe </title>
     <link rel="stylesheet" href="style.css">
-    <script src="../src/script.js" type="module"> </script>
+    <script src="./../src/auth.js" defer type="module"></script>
+    <script src="../src/script.js" type="module"></script>
 
 
 </head>
@@ -37,16 +38,11 @@
         </div>
 
 
-        <!-- <div class="searchbar">
-            <form id="searching">
-                <input type="search" placeholder="Search" id="search">
-            </form>
-        </div> -->
 
         <div class="right-nav">
             <nav>
                 <ul>
-                    <li><a href="likes.html"><img src="./icons/love.png" alt="like"></a></li>
+                    <li><a id="nav-like" href="likes.html"><img src="./icons/love.png" alt="like"></a></li>
                     <li><a href="login.html"><img src="./icons/user-interface.png" alt="login"></a></li>
                 </ul>
             </nav>
@@ -59,7 +55,9 @@
 
     <!-------------------Homepage----------------->
     <div class="homepage">
+
         <div class="text">
+            <p id="welcomemessage"></p>
             <h2>Discover <br> and collect <br> <span>NFTs</span> </h2>
             <h3>A non fungible token (NFT) is a unique and <br>non-interchangeable unit of a blockchain</h3>
         </div>
