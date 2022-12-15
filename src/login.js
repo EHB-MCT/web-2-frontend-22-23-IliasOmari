@@ -1,3 +1,4 @@
+//button of login
 document.getElementById("btn-login").addEventListener("click", function () {
     document.querySelector(".popup").style.display = "flex"
 
@@ -6,8 +7,8 @@ document.getElementById("btn-login").addEventListener("click", function () {
 
 document.querySelector(".closebtn").addEventListener("click", function () {
     document.querySelector(".popup").style.display = "none"
-
 })
+
 
 const logBtn = document.getElementById('logbtn')
 logBtn.addEventListener('click', (e) => {
@@ -32,7 +33,6 @@ logBtn.addEventListener('click', (e) => {
             //creating alerts for the user
             if (result.message == "You are successfully logged in!") {
                 sessionStorage.setItem('user', JSON.stringify(result.data))
-                alert(result.message)
                 window.location.href = "index.html"
 
             } else if (result.message == "No account with this email! Make sure you register first.") {
@@ -50,4 +50,13 @@ logBtn.addEventListener('click', (e) => {
 
 
 
+})
+
+
+const logout = document.getElementById('btn-logout')
+logout.addEventListener("click", e => {
+    e.preventDefault
+    console.log('clicked')
+    sessionStorage.removeItem('user')
+    window.location.href = "./../dist/index.html"
 })

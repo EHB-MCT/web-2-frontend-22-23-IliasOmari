@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700&display=swap');
 
-
-
-
 html {
     scroll-behavior: smooth !important;
 }
@@ -26,7 +23,7 @@ nav li {
 nav ul li a {
     text-decoration: none;
     color: black;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 nav ul li a:hover {
@@ -35,23 +32,22 @@ nav ul li a:hover {
 }
 
 .button {
-    margin-bottom: 10px;
-    margin-top: 27px;
+    margin-bottom: 27px;
+    margin-top: -6px;
     margin-left: 50px;
-}
-
-.searchbar {
-    margin-top: 15px;
 }
 
 .topnav {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 20px;
 }
 
 
 .logo {
     margin-top: 15px;
+    font-size: 16px;
+
 }
 
 span {
@@ -98,10 +94,10 @@ a.active {
 }
 
 .text h2 {
-    font-size: 70px;
-    line-height: 65px;
+    font-size: 80px;
+    line-height: 80px;
+    margin-top: -20px;
 }
-
 
 
 .text h3 {
@@ -160,7 +156,7 @@ h1 {
 }
 
 .card-collection {
-    width: 25%;
+    width: 300px;
     height: 100%;
     margin-left: 10px;
     border-radius: 10px;
@@ -211,8 +207,8 @@ h1 {
     height: 25px;
     margin-left: 150px;
     cursor: pointer;
-}
 
+}
 
 
 .filter {
@@ -247,8 +243,8 @@ h1 {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-
 }
+
 
 
 
@@ -292,12 +288,13 @@ h1 {
 
 .card-creator-img h2 {
     margin-top: 27px;
-    margin-left: 32px;
+    margin-left: 87px;
     width: 150px;
 }
 
 .card-creator-like {
     display: flex;
+    margin-left: 36px;
 
 }
 
@@ -374,7 +371,6 @@ h1 {
 
 
 .card-sales {
-
     width: 34%;
     margin-bottom: 30px;
 }
@@ -420,6 +416,7 @@ h1 {
 
 .info-sales-price_like {
     display: flex;
+    cursor: pointer;
 }
 
 .info-sales-price_like img {
@@ -437,7 +434,17 @@ h1 {
 
 
 /****************************************** Likepage ********************************************/
+#card-collection {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
 
 
 /****************************************** Loginpage ********************************************/
@@ -476,10 +483,58 @@ h1 {
 
 }
 
+.button-logout {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    margin-top: 25px;
+    box-shadow: 6px 6px 29px -4px black;
+    background-color: black;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+    display: block;
+}
+
+.button-change {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    margin-top: 25px;
+    box-shadow: 6px 6px 29px -4px black;
+    background-color: black;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+    display: block;
+}
+
+
 .button-login:hover {
     background-color: #A6FB3F;
     color: black;
 }
+
+.button-change:hover {
+    background-color: #A6FB3F;
+    color: black;
+}
+
+.button-logout:hover {
+    background-color: #A6FB3F;
+    color: black;
+}
+
+
+
 
 .button-login-in {
     padding-top: 10px;
@@ -516,7 +571,7 @@ h1 {
 
 }
 
-.popup-content {
+.popup-content-login {
     height: 250px;
     width: 500px;
     background: white;
@@ -525,6 +580,17 @@ h1 {
     position: relative;
 
 }
+
+.popup-content-changeUsername {
+    height: 250px;
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+
+}
+
 
 input {
     margin: 20px auto;
@@ -545,6 +611,8 @@ input {
     box-shadow: 6px 6px 29px -4px black;
     cursor: pointer;
 }
+
+
 
 /****************************************** Registerpage ********************************************/
 
@@ -637,35 +705,3 @@ input {
     box-shadow: 6px 6px 29px -4px black;
     cursor: pointer;
 }
-
-
-
-/****************************************** loader ********************************************/
-
-
-
-
-/****************************************** Mediaqueries ********************************************/
-/* @media(max-width:2560px) {
-    .homepage {
-        margin-top: 50px;
-
-    }
-
-    .card-collection {
-        width: 19%;
-    }
-
-    .card-collection img {
-        width: 260px;
-        margin-left: 6px;
-        margin-top: 10px;
-        border-radius: 10px;
-    }
-
-    .card-collection-rank_like img {
-        width: 30px;
-        height: 30px;
-        margin-left: 190px;
-    }
-} */

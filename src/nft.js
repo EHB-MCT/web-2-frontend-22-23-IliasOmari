@@ -5,7 +5,7 @@ let copyNft = [];
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'da69d0b0e9mshf63f749c6d62bd4p108f52jsnfef20042e335',
+        'X-RapidAPI-Key': '704a6c2a6dmsh417c72c7ccdde15p101110jsn4f3606cfc7e9',
         'X-RapidAPI-Host': 'binance-nft.p.rapidapi.com'
     }
 };
@@ -20,12 +20,15 @@ function fetchData() {
         .then(response => response.json())
         .then(data => {
             NFT = []
+            console.log(data.data.list)
             data.data.list.forEach(el => {
                 const title = el.title
                 const image = el.coverUrl
                 const price = parseInt(el.price)
+                const id = el.nftId
 
                 let nft = {
+                    id: id,
                     title: title,
                     image: image,
                     price: price
@@ -55,14 +58,57 @@ function renderSales() {
         </div>
         <div class="info-sales-price_like">
             <p>${el.price}$ </p>
-            <img src="./icons/love.png" alt="like">
+            <img id=${el.id} name = 'like' src="./icons/love.png" alt="like">
         </div>
 </div>`
     })
 
-
     htmlString.innerHTML += html
+    likedNft()
 }
+
+function likedNft() {
+    const like = document.getElementsByName('like')
+    like.forEach(el => {
+        console.log(el)
+        el.addEventListener('click', e => {
+            if (sessionStorage.getItem('user')) {
+                console.log('like')
+                let id = e.target.id
+                const filter = NFT.filter(el => el.id == id)
+                console.log(filter[0])
+                const user = JSON.parse(sessionStorage.getItem('user'))
+                let likedNft = {
+                    nftId: id,
+                    userId: user.uuid,
+                    title: filter[0].title,
+                    img: filter[0].image,
+                    rank: filter[0].rank,
+                }
+
+                fetch('http://localhost:1200/like', {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': "application/json"
+                        },
+                        body: JSON.stringify(likedNft)
+                    })
+                    .then(res => res.json())
+                    .then(data => alert(data.message))
+            } else {
+                alert('You need to be connected to like.')
+            }
+
+        })
+    })
+}
+
+
+
+
+
+
+
 
 
 

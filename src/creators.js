@@ -2,7 +2,7 @@ let create = [];
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'da69d0b0e9mshf63f749c6d62bd4p108f52jsnfef20042e335',
+        'X-RapidAPI-Key': '704a6c2a6dmsh417c72c7ccdde15p101110jsn4f3606cfc7e9',
         'X-RapidAPI-Host': 'binance-nft.p.rapidapi.com'
     }
 };
@@ -89,7 +89,7 @@ function renderCreators() {
                        <h2>${el.name}</h2>
        
                        <div class="card-creator-like">
-                           <img src="./icons/love.png" alt="like">
+                           <img id="like-creator" src="./icons/love.png" alt="like">
                        </div>
                    </div>
        
