@@ -1,1 +1,1 @@
-(()=>{if(sessionStorage.getItem("user")){const e=JSON.parse(sessionStorage.getItem("user"));document.getElementById("welcomemessage").textContent=`Welcome to the NFT Universe ${e.username}!`,document.getElementById("nav-like").style.display="flex"}else document.getElementById("nav-like").style.display="none"})();
+(()=>{const e=sessionStorage.getItem("user");document.getElementById("nav-like").style.display=e?"flex":"none"})();

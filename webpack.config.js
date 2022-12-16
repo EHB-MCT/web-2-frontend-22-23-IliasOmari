@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
+    index: "./src/index.js",
     auth: './src/auth.js',
     collection: './src/collection.js',
     creators: './src/creators.js',

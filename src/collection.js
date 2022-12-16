@@ -244,10 +244,10 @@ renderTwenty.addEventListener('click', (e) => {
 })
 
 
-// const like = document.getElementsByName('like')
-// like.forEach(el => {
-//     console.log(el)
-//     el.addEventListener('click', e => {
-//         console.log('like')
-//     })
-// })
+const like = document.getElementsByName('like')
+like.forEach(el => {
+    console.log(el)
+    el.addEventListener('click', e => {
+        console.log("liked")
+    })
+})

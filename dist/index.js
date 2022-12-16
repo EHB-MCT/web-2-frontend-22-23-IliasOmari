@@ -1,0 +1,1 @@
+(()=>{if(sessionStorage.getItem("user")){const e=JSON.parse(sessionStorage.getItem("user"));document.getElementById("welcomemessage").textContent=`Welcome to the NFT Universe ${e.username}!`}})();
