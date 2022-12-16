@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="../src/username.js" type="module"> </script>
+    <script src="../src/auth.js" type="module"></script>
+    <title>Change username</title>
+</head>
+
+<body>
+    <!-- Top-Navigation-Menu -->
+
+    <header class="topnav">
+        <div class="logo">
+            <a href="index.html" class="active"> <span>NFTs</span> Universe</a>
+        </div>
+
+        <div class="left-nav">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="top-nft.html"> Top NFTs</a></li>
+                    <li><a href="top-creators.html"> Top Creators</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="right-nav">
+            <nav>
+                <ul>
+                    <li><a id="nav-like" href="likes.html"><img src="./icons/love.png" alt="like"></a></li>
+                    <li><a href="login.html"><img src="./icons/user-interface.png" alt="login"></a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+    </header>
+
+    <!-------------------Popup tha changes the username----------------->
+
+    <div class="popup-change-username">
+        <div class="popup-content-change-username">
+            <a href="login.html"> <img src="./icons/close.png" alt="close" class="closebtnchange"></a>
+            <input id="userInput" type="text" placeholder="Username">
+            <a href="index.html" class="button-change-username" id="btnchange">Save Changes</a>
+        </div>
+    </div>
+</body>
+
+</html>
