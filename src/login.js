@@ -10,6 +10,7 @@ document.querySelector(".closebtn").addEventListener("click", function () {
 })
 
 
+
 const logBtn = document.getElementById('logbtn')
 logBtn.addEventListener('click', (e) => {
     e.preventDefault()
@@ -53,6 +54,7 @@ logBtn.addEventListener('click', (e) => {
 })
 
 
+
 const logout = document.getElementById('btn-logout')
 logout.addEventListener("click", e => {
     e.preventDefault
@@ -60,3 +62,17 @@ logout.addEventListener("click", e => {
     sessionStorage.removeItem('user')
     window.location.href = "./../dist/index.html"
 })
+
+const user = sessionStorage.getItem('user')
+
+if (user) {
+    document.getElementById('btn-login').style.display = "none"
+    document.getElementById('registerbtn').style.display = "none"
+    document.getElementById('btn-logout').style.display = "block"
+    document.getElementById('changebtn').style.display = "block"
+} else {
+    document.getElementById('btn-login').style.display = "block"
+    document.getElementById('registerbtn').style.display = "block"
+    document.getElementById('btn-logout').style.display = "none"
+    document.getElementById('changebtn').style.display = "none"
+}

@@ -8,7 +8,6 @@
          .then(res => res.json())
          .then(data => {
              data.data.forEach(el => {
-                 console.log(el)
                  const title = el.title
                  const image = el.img
                  const price = el.price
@@ -51,7 +50,7 @@
 
             <div class="card-collection-rank_like">
             <p>#${el.rank}</p>
-            <img id = ${el.id} name = 'delete' src="./img/icons8-trash-can-24.png" alt="trash"></a> 
+            <img id = ${el.id} name = 'delete' src="./img/delete (1).png" alt="trash"></a> 
             </div>
         </div>`
      })
@@ -63,10 +62,10 @@
          el.addEventListener('click', (e) => {
              e.preventDefault()
              const id = e.target.id
-             getData(`http://localhost:1200/deleteLike/${id}`, "DELETE")
+             getData(`http://localhost:1200/deleteLike?collectionId=${id}&userId=${user.uuid}`, "DELETE")
                  .then(result => {
                      console.log(result)
-
+                     location.reload()
                  })
          })
      })

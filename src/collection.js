@@ -36,8 +36,6 @@ function fetchData() {
                 sortedCollection.push(nft)
             })
             renderCollections()
-
-
         })
 }
 
@@ -53,11 +51,10 @@ function renderCollections() {
             return -1
         }
     })
-    console.log(sort)
+
     let html = ''
 
     sort.forEach(el => {
-        console.log(el)
         html += `
         <div class="card-collection">
         <div class="card-collection-img">
@@ -74,10 +71,11 @@ function renderCollections() {
             <p>#${el.rank}</p>
            <img id = ${el.id} name = 'like' src="./icons/love.png" alt="like"></a> 
         </div>
+    </div>
+
 
     </div>`
     })
-
     htmlString.innerHTML += html
     likedCollection()
 
@@ -87,14 +85,12 @@ function renderCollections() {
 function likedCollection() {
     const like = document.getElementsByName('like')
     like.forEach(el => {
-        console.log(el)
         el.addEventListener('click', e => {
             if (sessionStorage.getItem('user')) {
-                console.log('like')
                 let id = e.target.id
                 const filter = collection.filter(el => el.id == id)
-                console.log(filter[0])
                 const user = JSON.parse(sessionStorage.getItem('user'))
+
                 let likedCollection = {
                     collectionId: id,
                     userId: user.uuid,
@@ -112,7 +108,9 @@ function likedCollection() {
                         body: JSON.stringify(likedCollection)
                     })
                     .then(res => res.json())
-                    .then(data => alert(data.message))
+                    .then(data => {
+                        alert(data.message)
+                    })
             } else {
                 window.location.href = "login.html"
             }
@@ -123,8 +121,8 @@ function likedCollection() {
 
 
 
-let buttons = document.getElementsByName('filter')
 
+let buttons = document.getElementsByName('filter')
 buttons.forEach(button => {
     button.addEventListener('click', function () {
         buttons.forEach(btn => btn.classList.remove('active'));
@@ -173,7 +171,6 @@ renderThree.addEventListener('click', (e) => {
             </div>
     
         </div>`
-
         htmlString.innerHTML += html
         likedCollection()
     })
@@ -183,7 +180,6 @@ const renderTen = document.getElementById('top10')
 renderTen.addEventListener('click', (e) => {
     const htmlString = document.getElementById('cards')
     htmlString.innerHTML = ""
-
 
     const slice = collection.slice(0, 10)
     slice.forEach(el => {
@@ -248,11 +244,10 @@ renderTwenty.addEventListener('click', (e) => {
 })
 
 
-const like = document.getElementsByName('like')
-
-like.forEach(el => {
-    console.log(el)
-    el.addEventListener('click', e => {
-        console.log('like')
-    })
-})
+// const like = document.getElementsByName('like')
+// like.forEach(el => {
+//     console.log(el)
+//     el.addEventListener('click', e => {
+//         console.log('like')
+//     })
+// })

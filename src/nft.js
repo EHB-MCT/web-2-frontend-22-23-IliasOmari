@@ -5,7 +5,7 @@ let copyNft = [];
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '704a6c2a6dmsh417c72c7ccdde15p101110jsn4f3606cfc7e9',
+        'X-RapidAPI-Key': '12f64dfb11msh59b48c715183f7dp1926fdjsn4bd22c0cdd56',
         'X-RapidAPI-Host': 'binance-nft.p.rapidapi.com'
     }
 };
