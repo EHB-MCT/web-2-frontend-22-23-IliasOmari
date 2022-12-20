@@ -23,14 +23,20 @@ function fetchData() {
             console.log(data.data.list)
             data.data.list.forEach(el => {
                 const title = el.title
-                const image = el.coverUrl
+                let img
+
+                if (el.coverUrl) {
+                    img = el.coverUrl
+                } else {
+                    img = `./img/no_picture.png`
+                }
                 const price = el.floorPrice
                 const rank = el.rank
                 const id = el.collectionId
                 let nft = {
                     id: id,
                     title: title,
-                    image: image,
+                    image: img,
                     price: price,
                     rank: rank
                 }
@@ -38,10 +44,38 @@ function fetchData() {
                 sortedCollection.push(nft)
             })
             renderCollections()
+            likes()
         })
 }
 
 
+function likes() {
+    const user = JSON.parse(sessionStorage.getItem('user'))
+
+    if (user) {
+        fetch(`http://localhost:1200/like/${user.uuid}`)
+
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                data.data.forEach(el => {
+                    let collectionId = el.collectionId
+                    const like = document.getElementsByName('like')
+                    like.forEach(btn => {
+                        console.log(btn.parentElement)
+                        if (btn.getAttribute('id') == collectionId) {
+                            btn.parentElement.innerHTML = `<img src="./img/like_red.png">`
+                        }
+                    })
+
+
+
+
+                })
+            })
+
+    }
+}
 
 function renderCollections() {
     const htmlString = document.getElementById('cards')
@@ -71,7 +105,10 @@ function renderCollections() {
         </div>
         <div class="card-collection-rank_like">
             <p>#${el.rank}</p>
+            <div>
            <img id = ${el.id} name = 'like' src="./icons/love.png" alt="like"></a> 
+           </div>
+
         </div>
     </div>
 
