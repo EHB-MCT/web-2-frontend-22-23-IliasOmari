@@ -6,6 +6,14 @@ Nft Universe is a site where you can explore NFT collections, NFTs, and NFT crea
 npm install
 
 ## Used packages
-#npm i uuid
-#npm i webpack
-#npm i webpack-cli
+npm i uuid
+npm i webpack webpack-cli
+
+## Sources
+https://www.youtube.com/watch?v=ptI8g-05VM0 (popup)
+https://stackoverflow.com/questions/3774454/is-it-possible-to-recolor-an-image-using-javascript
+https://www.w3schools.com/
+https://www.npmjs.com/
+https://webpack.js.org/guides/getting-started/
+https://www.youtube.com/@MikeDerycke
+
