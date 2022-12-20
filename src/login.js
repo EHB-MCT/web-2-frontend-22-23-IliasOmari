@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2'
 
 //this code is inspirated from (https://www.youtube.com/watch?v=ptI8g-05VM0&t=3s)
-//button of login
+
 document.getElementById("btn-login").addEventListener("click", function () {
     document.querySelector(".popup").style.display = "flex"
 
@@ -36,7 +36,7 @@ logBtn.addEventListener('click', (e) => {
         })
         .then(res => res.json())
         .then(result => {
-            //creating alerts for the user
+
             if (result.message == "You are successfully logged in!") {
                 sessionStorage.setItem('user', JSON.stringify(result.data))
                 window.location.href = "index.html"
@@ -112,7 +112,6 @@ logBtn.addEventListener('click', (e) => {
 const logout = document.getElementById('btn-logout')
 logout.addEventListener("click", e => {
     e.preventDefault
-    console.log('clicked')
     sessionStorage.removeItem('user')
     window.location.href = "./../dist/index.html"
 })

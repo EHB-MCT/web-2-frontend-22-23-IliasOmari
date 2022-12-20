@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2'
 
-//button of change username
+
 //this code is inspirated from (https://www.youtube.com/watch?v=ptI8g-05VM0&t=3s)
 document.getElementById("btnchange").addEventListener("click", function () {
     document.querySelector(".popup-change-username").style.display = "flex"
@@ -17,7 +17,7 @@ document.querySelector(".closebtnchange").addEventListener("click", function () 
 const rgstBtn = document.getElementById('btnchange')
 rgstBtn.addEventListener('click', (e) => {
     const username = document.getElementById('userInput').value
-    console.log(username)
+
     const user = JSON.parse(sessionStorage.getItem('user'))
 
     const newName = {
