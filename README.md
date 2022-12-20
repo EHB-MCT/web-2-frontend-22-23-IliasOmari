@@ -6,6 +6,6 @@ Nft Universe is a site where you can explore NFT collections, NFTs, and NFT crea
 npm install
 
 ## Used packages
-npm i uuid
-npm i webpack
-npm i webpack-cli
+#npm i uuid
+#npm i webpack
+#npm i webpack-cli
