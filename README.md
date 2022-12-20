@@ -10,9 +10,6 @@ npm install
 ```
 ## Used packages
 ```bash
-npm i uuid
-```
-```bash
 npm i webpack webpack-cli
 ```
 ```bash
