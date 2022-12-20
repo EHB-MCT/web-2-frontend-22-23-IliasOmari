@@ -8,13 +8,15 @@ Nft Universe is a site where you can explore NFT collections, NFTs, and NFT crea
 ```bash
 npm install
 ```
-
 ## Used packages
 ```bash
 npm i uuid
 ```
 ```bash
 npm i webpack webpack-cli
+```
+```bash
+npm install sweetalert2
 ```
 
 ## Sources
