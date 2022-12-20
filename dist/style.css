@@ -458,9 +458,6 @@ a[name="delete"] {
 }
 
 /****************************************** Loginpage ********************************************/
-/* form {
-    text-align: center;
-} */
 
 .container {
     position: absolute;
@@ -716,7 +713,7 @@ input {
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 5px;
-    margin-top: 25px;
+    margin-top: 30px;
     box-shadow: 6px 6px 29px -4px black;
     background-color: black;
     font-size: 14px;
@@ -733,7 +730,7 @@ input {
     color: black;
 }
 
-.button-change-username-in {
+.button-change-username {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;

@@ -29,8 +29,18 @@
  }
 
  function renderLikedItems() {
+
+
+     if (likedItems.length == 0) {
+         const message = document.getElementById("nolike-message")
+
+         message.style.display = 'block'
+     } else {
+         const message = document.getElementById("nolike-message")
+
+         message.style.display = 'none'
+     }
      const htmlString = document.getElementById('card-collection')
-     htmlString.innerHTML = ''
      let html = ''
      likedItems.forEach(el => {
          html += `
@@ -53,6 +63,7 @@
             <img id = ${el.id} name = 'delete' src="./img/delete (1).png" alt="trash"></a> 
             </div>
         </div>`
+
      })
      htmlString.innerHTML += html
 
