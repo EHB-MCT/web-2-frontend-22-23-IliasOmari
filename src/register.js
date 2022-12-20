@@ -1,3 +1,7 @@
+import Swal from 'sweetalert2'
+
+//this code is inspirated from (https://www.youtube.com/watch?v=ptI8g-05VM0&t=3s)
+
 document.getElementById("btnregister").addEventListener("click", function () {
     document.querySelector(".popup-register").style.display = "flex"
 })
@@ -5,6 +9,9 @@ document.getElementById("btnregister").addEventListener("click", function () {
 document.querySelector(".closebtnrgst").addEventListener("click", function () {
     document.querySelector(".popup-register").style.display = "none"
 })
+
+//
+
 
 const rgstBtn = document.getElementById('btnregister')
 rgstBtn.addEventListener('click', (e) => {
@@ -39,20 +46,85 @@ rgstBtn.addEventListener('click', (e) => {
 
 
                 if (data.message == "Your account has been successfully created") {
-                    alert(data.message)
+
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-right',
+                        iconColor: 'white',
+                        customClass: {
+                            popup: 'colored-toast'
+                        },
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+
+                    })
+                    Toast.fire({
+                        icon: 'succes',
+                        title: data.message,
+                    })
                     window.location.href = "login.html"
 
                 } else if (data.message == "Missing username, mail, password") {
-                    alert(data.message)
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-right',
+                        iconColor: 'white',
+                        customClass: {
+                            popup: 'colored-toast'
+                        },
+                        showConfirmButton: false,
+                        timer: 2500,
+                        timerProgressBar: true
+
+                    })
+
+                    Toast.fire({
+                        icon: 'warning',
+                        title: data.message,
+                    })
 
                 } else if (data.message == "This email is already used") {
-                    alert(data.message)
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-right',
+                        iconColor: 'white',
+                        customClass: {
+                            popup: 'colored-toast'
+                        },
+                        showConfirmButton: false,
+                        timer: 2500,
+                        timerProgressBar: true
 
+                    })
+
+                    Toast.fire({
+                        icon: 'error',
+                        title: data.message,
+                    })
 
                 }
             })
     } else {
-        alert("you did not enter the same passwords. Please try again")
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true
+
+        })
+
+        Toast.fire({
+            icon: 'error',
+            title: 'you did not enter the same passwords. Please try again',
+        })
+
     }
 
 })

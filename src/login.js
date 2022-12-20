@@ -1,3 +1,6 @@
+import Swal from 'sweetalert2'
+
+//this code is inspirated from (https://www.youtube.com/watch?v=ptI8g-05VM0&t=3s)
 //button of login
 document.getElementById("btn-login").addEventListener("click", function () {
     document.querySelector(".popup").style.display = "flex"
@@ -8,6 +11,8 @@ document.getElementById("btn-login").addEventListener("click", function () {
 document.querySelector(".closebtn").addEventListener("click", function () {
     document.querySelector(".popup").style.display = "none"
 })
+//
+
 
 
 
@@ -37,14 +42,63 @@ logBtn.addEventListener('click', (e) => {
                 window.location.href = "index.html"
 
             } else if (result.message == "No account with this email! Make sure you register first.") {
-                alert(result.message)
+
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-right',
+                    iconColor: 'white',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 3500,
+                    timerProgressBar: true
+
+                })
+
+                Toast.fire({
+                    icon: 'error',
+                    title: result.message,
+                })
 
             } else if (result.message == " Missing mail, password") {
-                alert(result.message)
 
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-right',
+                    iconColor: 'white',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 2500,
+                    timerProgressBar: true
+
+                })
+
+                Toast.fire({
+                    icon: 'warning',
+                    title: result.message,
+                })
 
             } else if (result.message == "Incorrect password for this email") {
-                alert(result.message)
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-right',
+                    iconColor: 'white',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 2500,
+                    timerProgressBar: true
+
+                })
+
+                Toast.fire({
+                    icon: 'error',
+                    title: result.message,
+                })
 
             }
         })

@@ -1,4 +1,7 @@
+import Swal from 'sweetalert2'
+
 //button of change username
+//this code is inspirated from (https://www.youtube.com/watch?v=ptI8g-05VM0&t=3s)
 document.getElementById("btnchange").addEventListener("click", function () {
     document.querySelector(".popup-change-username").style.display = "flex"
 
@@ -8,6 +11,7 @@ document.querySelector(".closebtnchange").addEventListener("click", function () 
     document.querySelector(".popup-change-username").style.display = "none"
 
 })
+//
 
 
 const rgstBtn = document.getElementById('btnchange')
@@ -22,7 +26,7 @@ rgstBtn.addEventListener('click', (e) => {
     }
 
     sessionStorage.setItem('user', JSON.stringify(newName))
-    fetch(`http://localhost:1200/changename?id=${user.uuid}`,{
+    fetch(`http://localhost:1200/changename?id=${user.uuid}`, {
             method: "PUT",
             headers: {
                 'Content-Type': "application/json",
@@ -36,15 +40,44 @@ rgstBtn.addEventListener('click', (e) => {
         })
 
         .then(res => res.json())
-        .then(data => {
-            console.log(data)
+        .then(async data => {
             if (data.message == 'Your username is succesfully updated !') {
-                alert(data.message)
+
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-right',
+                    iconColor: 'white',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 2500,
+                    timerProgressBar: true
+                })
+
+                await Toast.fire({
+                    icon: 'success',
+                    title: data.message,
+                })
+                window.location.href = "index.html"
 
             } else {
-                alert("New username is missing")
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-right',
+                    iconColor: 'white',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 2500,
+                    timerProgressBar: true
+
+                })
+                Toast.fire({
+                    icon: 'warning',
+                    title: 'New username is missing',
+                })
             }
         })
-
-
 })

@@ -5,7 +5,7 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "webpack"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/EHB-MCT/web-2-frontend-22-23-IliasOmari#readme",
   "dependencies": {
+    "sweetalert2": "^11.6.16",
     "uuid": "^9.0.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0"

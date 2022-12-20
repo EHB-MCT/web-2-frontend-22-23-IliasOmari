@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2'
+
 let collection = [];
 let sortedCollection = [];
 const options = {
@@ -109,7 +111,23 @@ function likedCollection() {
                     })
                     .then(res => res.json())
                     .then(data => {
-                        alert(data.message)
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-right',
+                            iconColor: 'white',
+                            customClass: {
+                                popup: 'colored-toast'
+                            },
+                            showConfirmButton: false,
+                            timer: 2500,
+                            timerProgressBar: true
+
+                        })
+
+                        Toast.fire({
+                            icon: 'info',
+                            title: data.message,
+                        })
                     })
             } else {
                 window.location.href = "login.html"
