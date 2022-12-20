@@ -18,7 +18,7 @@ npm i webpack webpack-cli
 ```
 
 ## Sources
-https://www.youtube.com/watch?v=ptI8g-05VM0 (popup)
+https://www.youtube.com/watch?v=ptI8g-05VM0 (voor de popup van mijn login)
 
 https://stackoverflow.com/questions/3774454/is-it-possible-to-recolor-an-image-using-javascript
 
