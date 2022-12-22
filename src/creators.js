@@ -16,7 +16,6 @@ function fetchData() {
         .then(response => response.json())
         .then(data => {
             create = []
-            console.log(data.data.list)
             data.data.list.forEach(el => {
                 const name = el.nickName
                 const image = el.avatarUrl
@@ -52,7 +51,6 @@ function fetchByDate(value) {
         .then(response => response.json())
         .then(data => {
             create = []
-            console.log(data)
             data.data.list.forEach(el => {
                 const name = el.nickName
                 const image = el.avatarUrl

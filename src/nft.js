@@ -21,7 +21,6 @@ function fetchData() {
         .then(response => response.json())
         .then(data => {
             NFT = []
-            console.log(data.data.list)
             data.data.list.forEach(el => {
                 const title = el.title
                 const image = el.coverUrl
