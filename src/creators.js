@@ -1,8 +1,10 @@
+import Swal from 'sweetalert2'
 let create = [];
+let copyCreate = [];
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '704a6c2a6dmsh417c72c7ccdde15p101110jsn4f3606cfc7e9',
+        'X-RapidAPI-Key': 'b97d1020d2msh434627b82e6f637p1e1b9djsnee3cc160836c',
         'X-RapidAPI-Host': 'binance-nft.p.rapidapi.com'
     }
 };
@@ -14,6 +16,7 @@ function fetchData() {
         .then(response => response.json())
         .then(data => {
             create = []
+            console.log(data.data.list)
             data.data.list.forEach(el => {
                 const name = el.nickName
                 const image = el.avatarUrl
@@ -21,8 +24,10 @@ function fetchData() {
                 const rank = el.rank
                 const items = el.itemsCount
                 const fans = el.fansCount
+                const id = el.creatorId
 
                 let crt = {
+                    id: id,
                     name: name,
                     image: image,
                     sales: sales,
@@ -32,18 +37,14 @@ function fetchData() {
                 }
                 create.push(crt)
             })
+            copyCreate = create
             renderCreators()
+            changeLike()
         })
 }
 
 
-const button = document.getElementsByName('filter')
-button.forEach(btn => {
-    btn.addEventListener('click', e => {
-        let value = e.target.id
-        fetchByDate(value)
-    })
-})
+
 
 
 function fetchByDate(value) {
@@ -51,6 +52,7 @@ function fetchByDate(value) {
         .then(response => response.json())
         .then(data => {
             create = []
+            console.log(data)
             data.data.list.forEach(el => {
                 const name = el.nickName
                 const image = el.avatarUrl
@@ -58,8 +60,10 @@ function fetchByDate(value) {
                 const rank = el.rank
                 const items = el.itemsCount
                 const fans = el.fansCount
+                const id = el.creatorId
 
                 let crt = {
+                    id: id,
                     name: name,
                     image: image,
                     sales: sales,
@@ -88,7 +92,7 @@ function renderCreators() {
                        <h2>${el.name}</h2>
        
                        <div class="card-creator-like">
-                           <img id="like-creator" src="./icons/love.png" alt="like">
+                       <img id=${el.id} name = 'like' src="./icons/love.png" alt="like">
                        </div>
                    </div>
        
@@ -122,15 +126,101 @@ function renderCreators() {
     })
 
     htmlString.innerHTML += html
+    likedCreator()
 }
 
 
 
+function likedCreator() {
+    const like = document.getElementsByName('like')
+    like.forEach(el => {
+        el.addEventListener('click', e => {
+            if (sessionStorage.getItem('user')) {
+                let id = e.target.id
+                const filter = create.filter(el => el.id == id)
+                const user = JSON.parse(sessionStorage.getItem('user'))
+
+                let likedCrt = {
+                    collectionId: id,
+                    userId: user.uuid,
+                    title: filter[0].name,
+                    img: filter[0].image,
+                    rank: filter[0].rank
+                }
+
+                fetch('http://localhost:1200/like', {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': "application/json"
+                        },
+                        body: JSON.stringify(likedCrt)
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-right',
+                            iconColor: 'white',
+                            customClass: {
+                                popup: 'colored-toast'
+                            },
+                            showConfirmButton: false,
+                            timer: 2500,
+                            timerProgressBar: true
+
+                        })
+
+                        Toast.fire({
+                            icon: 'info',
+                            title: data.message,
+                        })
+                    })
+            } else {
+                window.location.href = "login.html"
+            }
+
+        })
+    })
+}
+
+function changeLike() {
+    const user = JSON.parse(sessionStorage.getItem('user'))
+
+    if (user) {
+        fetch(`http://localhost:1200/like/${user.uuid}`)
+
+            .then(res => res.json())
+            .then(data => {
+                data.data.forEach(el => {
+                    let collectionId = el.collectionId
+                    const like = document.getElementsByName('like')
+                    like.forEach(btn => {
+                        if (btn.getAttribute('id') == collectionId) {
+                            btn.parentElement.innerHTML = `<img src="./img/like_red.png">`
+                        }
+                    })
+
+                })
+            })
+
+    }
+}
+
+
+
+//buttons 
 const renderAll = document.getElementById('All')
 renderAll.addEventListener('click', (e) => {
     fetchData()
 })
 
+const button = document.getElementsByName('filter')
+button.forEach(btn => {
+    btn.addEventListener('click', e => {
+        let value = e.target.id
+        fetchByDate(value)
+    })
+})
 
 let buttons = document.getElementsByName('filter')
 

@@ -5,7 +5,7 @@ let sortedCollection = [];
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '704a6c2a6dmsh417c72c7ccdde15p101110jsn4f3606cfc7e9',
+        'X-RapidAPI-Key': '12f64dfb11msh59b48c715183f7dp1926fdjsn4bd22c0cdd56',
         'X-RapidAPI-Host': 'binance-nft.p.rapidapi.com'
     }
 };
@@ -23,7 +23,6 @@ function fetchData() {
             data.data.list.forEach(el => {
                 const title = el.title
                 let img
-
                 if (el.coverUrl) {
                     img = el.coverUrl
                 } else {
@@ -43,12 +42,12 @@ function fetchData() {
                 sortedCollection.push(nft)
             })
             renderCollections()
-            likes()
+            changeLike()
         })
 }
 
 
-function likes() {
+function changeLike() {
     const user = JSON.parse(sessionStorage.getItem('user'))
 
     if (user) {
@@ -295,6 +294,5 @@ renderTwenty.addEventListener('click', (e) => {
 
 const like = document.getElementsByName('like')
 like.forEach(el => {
-    el.addEventListener('click', e => {
-    })
+    el.addEventListener('click', e => {})
 })

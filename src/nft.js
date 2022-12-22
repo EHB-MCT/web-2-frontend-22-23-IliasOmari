@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2'
 let NFT = [];
 let copyNft = [];
 
@@ -5,7 +6,7 @@ let copyNft = [];
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '12f64dfb11msh59b48c715183f7dp1926fdjsn4bd22c0cdd56',
+        'X-RapidAPI-Key': 'b97d1020d2msh434627b82e6f637p1e1b9djsnee3cc160836c',
         'X-RapidAPI-Host': 'binance-nft.p.rapidapi.com'
     }
 };
@@ -20,30 +21,33 @@ function fetchData() {
         .then(response => response.json())
         .then(data => {
             NFT = []
+            console.log(data.data.list)
             data.data.list.forEach(el => {
                 const title = el.title
                 const image = el.coverUrl
                 const price = parseInt(el.price)
                 const id = el.nftId
+                const rank = el.rank
 
                 let nft = {
                     id: id,
                     title: title,
                     image: image,
-                    price: price
+                    price: price,
+                    rank: rank,
                 }
                 NFT.push(nft)
             })
             copyNft = NFT
-            renderSales()
+            renderNFT()
+            changeLike()
         })
 
 }
 
 
 
-
-function renderSales() {
+function renderNFT() {
     const htmlString = document.getElementById('sales')
     htmlString.innerHTML = ''
     let html = ''
@@ -69,19 +73,18 @@ function renderSales() {
 function likedNft() {
     const like = document.getElementsByName('like')
     like.forEach(el => {
-   
         el.addEventListener('click', e => {
             if (sessionStorage.getItem('user')) {
-        
                 let id = e.target.id
                 const filter = NFT.filter(el => el.id == id)
                 const user = JSON.parse(sessionStorage.getItem('user'))
                 let likedNft = {
-                    nftId: id,
+                    collectionId: id,
                     userId: user.uuid,
                     title: filter[0].title,
                     img: filter[0].image,
                     rank: filter[0].rank,
+                    price: filter[0].price,
                 }
 
                 fetch('http://localhost:1200/like', {
@@ -89,16 +92,58 @@ function likedNft() {
                         headers: {
                             'Content-Type': "application/json"
                         },
+
                         body: JSON.stringify(likedNft)
                     })
                     .then(res => res.json())
-                    .then(data => alert(data.message))
+                    .then(data => {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-right',
+                            iconColor: 'white',
+                            customClass: {
+                                popup: 'colored-toast'
+                            },
+                            showConfirmButton: false,
+                            timer: 2500,
+                            timerProgressBar: true
+
+                        })
+
+                        Toast.fire({
+                            icon: 'info',
+                            title: data.message,
+                        })
+                    })
             } else {
-                alert('You need to be connected to like.')
+                window.location.href = "login.html"
             }
 
         })
     })
+}
+
+function changeLike() {
+    const user = JSON.parse(sessionStorage.getItem('user'))
+
+    if (user) {
+        fetch(`http://localhost:1200/like/${user.uuid}`)
+
+            .then(res => res.json())
+            .then(data => {
+                data.data.forEach(el => {
+                    let collectionId = el.collectionId
+                    const like = document.getElementsByName('like')
+                    like.forEach(btn => {
+                        if (btn.getAttribute('id') == collectionId) {
+                            btn.parentElement.innerHTML = `<img src="./img/like_red.png">`
+                        }
+                    })
+
+                })
+            })
+
+    }
 }
 
 
@@ -106,10 +151,7 @@ function likedNft() {
 
 
 
-
-
-
-
+// sort Buttons
 const renderAll = document.getElementById('All')
 renderAll.addEventListener('click', (e) => {
     fetchData()
@@ -126,7 +168,7 @@ sortCheap.addEventListener('click', (e) => {
 })
 
 
-
+// sort functions
 function sortExp() {
     NFT.sort((a, b) => {
         if (a.price < b.price) {
@@ -135,7 +177,7 @@ function sortExp() {
             return -1
         }
     })
-    renderSales()
+    renderNFT()
 }
 
 function sortChp() {
@@ -146,7 +188,7 @@ function sortChp() {
             return 1
         }
     })
-    renderSales()
+    renderNFT()
 }
 
 let buttons = document.getElementsByName('filter')
