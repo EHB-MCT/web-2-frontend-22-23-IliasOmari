@@ -20,7 +20,6 @@ function fetchData() {
         .then(data => {
             collection = []
             sortedCollection = []
-            console.log(data.data.list)
             data.data.list.forEach(el => {
                 const title = el.title
                 let img
@@ -57,12 +56,10 @@ function likes() {
 
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 data.data.forEach(el => {
                     let collectionId = el.collectionId
                     const like = document.getElementsByName('like')
                     like.forEach(btn => {
-                        console.log(btn.parentElement)
                         if (btn.getAttribute('id') == collectionId) {
                             btn.parentElement.innerHTML = `<img src="./img/like_red.png">`
                         }
@@ -301,8 +298,6 @@ renderTwenty.addEventListener('click', (e) => {
 
 const like = document.getElementsByName('like')
 like.forEach(el => {
-    console.log(el)
     el.addEventListener('click', e => {
-        console.log("liked")
     })
 })

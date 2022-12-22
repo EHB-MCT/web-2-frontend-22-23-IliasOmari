@@ -15,13 +15,11 @@ document.querySelector(".closebtnrgst").addEventListener("click", function () {
 
 const rgstBtn = document.getElementById('btnregister')
 rgstBtn.addEventListener('click', (e) => {
-    console.log('register')
     const username = document.getElementById('inputUsername').value
     const email = document.getElementById('inputEmail').value
     const password = document.getElementById('inputPassword').value
     const password2 = document.getElementById('inputPassword2').value
 
-    console.log(email, password, password2, username)
 
     if (password == password2) {
 
@@ -42,9 +40,6 @@ rgstBtn.addEventListener('click', (e) => {
 
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-
-
                 if (data.message == "Your account has been successfully created") {
 
                     const Toast = Swal.mixin({

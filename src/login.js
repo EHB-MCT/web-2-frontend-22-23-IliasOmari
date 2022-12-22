@@ -21,7 +21,6 @@ logBtn.addEventListener('click', (e) => {
     e.preventDefault()
     const email = document.getElementById('inputEmail').value
     const password = document.getElementById('inputPassword').value
-    console.log(email, password)
 
     fetch("http://localhost:1200/login", {
             method: "POST",

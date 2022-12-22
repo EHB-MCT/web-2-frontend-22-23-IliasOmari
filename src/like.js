@@ -23,7 +23,6 @@
                  }
                  likedItems.push(nft)
              })
-             console.log(likedItems)
              renderLikedItems()
          })
  }
@@ -75,7 +74,6 @@
              const id = e.target.id
              getData(`http://localhost:1200/deleteLike?collectionId=${id}&userId=${user.uuid}`, "DELETE")
                  .then(result => {
-                     console.log(result)
                      location.reload()
                  })
          })

@@ -42,7 +42,6 @@ button.forEach(btn => {
     btn.addEventListener('click', e => {
         let value = e.target.id
         fetchByDate(value)
-        console.log('click')
     })
 })
 
@@ -129,7 +128,6 @@ function renderCreators() {
 
 const renderAll = document.getElementById('All')
 renderAll.addEventListener('click', (e) => {
-    console.log('list of all creators')
     fetchData()
 })
 

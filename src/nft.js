@@ -20,7 +20,6 @@ function fetchData() {
         .then(response => response.json())
         .then(data => {
             NFT = []
-            console.log(data.data.list)
             data.data.list.forEach(el => {
                 const title = el.title
                 const image = el.coverUrl
@@ -70,13 +69,12 @@ function renderSales() {
 function likedNft() {
     const like = document.getElementsByName('like')
     like.forEach(el => {
-        console.log(el)
+   
         el.addEventListener('click', e => {
             if (sessionStorage.getItem('user')) {
-                console.log('like')
+        
                 let id = e.target.id
                 const filter = NFT.filter(el => el.id == id)
-                console.log(filter[0])
                 const user = JSON.parse(sessionStorage.getItem('user'))
                 let likedNft = {
                     nftId: id,
@@ -119,13 +117,11 @@ renderAll.addEventListener('click', (e) => {
 
 const sortExpensive = document.getElementById('sortExpensive')
 sortExpensive.addEventListener('click', (e) => {
-    console.log('click')
     sortExp()
 })
 
 const sortCheap = document.getElementById('sortCheap')
 sortCheap.addEventListener('click', (e) => {
-    console.log('click')
     sortChp()
 })
 
