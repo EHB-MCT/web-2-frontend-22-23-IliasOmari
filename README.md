@@ -27,4 +27,8 @@ https://www.npmjs.com/
 
 https://webpack.js.org/guides/getting-started/
 
+https://www.flaticon.com/
+
 https://www.youtube.com/@MikeDerycke
+
+when I had difficulties I asked for help from Mohamed Mankouchi, Lozano Juan-Luca and Quentin Mignon

@@ -65,9 +65,6 @@ function likes() {
                         }
                     })
 
-
-
-
                 })
             })
 
