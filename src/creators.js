@@ -18,7 +18,12 @@ function fetchData() {
             create = []
             data.data.list.forEach(el => {
                 const name = el.nickName
-                const image = el.avatarUrl
+                let image
+                if (el.avatarUrl) {
+                    image = el.avatarUrl
+                } else {
+                    image = `./img/no_picture.png`
+                }
                 const sales = el.salesCount
                 const rank = el.rank
                 const items = el.itemsCount

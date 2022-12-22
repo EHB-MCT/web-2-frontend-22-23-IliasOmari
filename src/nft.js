@@ -23,7 +23,12 @@ function fetchData() {
             NFT = []
             data.data.list.forEach(el => {
                 const title = el.title
-                const image = el.coverUrl
+                let image
+                if (el.coverUrl) {
+                    image = el.coverUrl
+                } else {
+                    image = `./img/no_picture.png`
+                }
                 const price = parseInt(el.price)
                 const id = el.nftId
                 const rank = el.rank
