@@ -23,7 +23,7 @@ rgstBtn.addEventListener('click', (e) => {
 
     if (password == password2) {
 
-        fetch("http://localhost:1200/register", {
+        fetch("https://nft-universe.onrender.com/register", {
                 method: "POST",
                 headers: {
                     'Content-Type': "application/json"

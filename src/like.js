@@ -3,7 +3,7 @@
 
  if (user) {
      likedItems = []
-     fetch(`http://localhost:1200/like/${user.uuid}`)
+     fetch(`https://nft-universe.onrender.com/like/${user.uuid}`)
 
          .then(res => res.json())
          .then(data => {
@@ -72,7 +72,7 @@
          el.addEventListener('click', (e) => {
              e.preventDefault()
              const id = e.target.id
-             getData(`http://localhost:1200/deleteLike?collectionId=${id}&userId=${user.uuid}`, "DELETE")
+             getData(`https://nft-universe.onrender.com/deleteLike?collectionId=${id}&userId=${user.uuid}`, "DELETE")
                  .then(result => {
                      location.reload()
                  })

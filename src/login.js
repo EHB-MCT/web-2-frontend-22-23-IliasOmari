@@ -22,7 +22,7 @@ logBtn.addEventListener('click', (e) => {
     const email = document.getElementById('inputEmail').value
     const password = document.getElementById('inputPassword').value
 
-    fetch("http://localhost:1200/login", {
+    fetch("https://nft-universe.onrender.com/login", {
             method: "POST",
             headers: {
                 'Content-Type': "application/json"

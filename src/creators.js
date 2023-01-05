@@ -151,7 +151,7 @@ function likedCreator() {
                     rank: filter[0].rank
                 }
 
-                fetch('http://localhost:1200/like', {
+                fetch('https://nft-universe.onrender.com/like', {
                         method: "POST",
                         headers: {
                             'Content-Type': "application/json"
@@ -190,7 +190,7 @@ function changeLike() {
     const user = JSON.parse(sessionStorage.getItem('user'))
 
     if (user) {
-        fetch(`http://localhost:1200/like/${user.uuid}`)
+        fetch(`https://nft-universe.onrender.com/like/${user.uuid}`)
 
             .then(res => res.json())
             .then(data => {

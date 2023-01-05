@@ -26,7 +26,7 @@ rgstBtn.addEventListener('click', (e) => {
     }
 
     sessionStorage.setItem('user', JSON.stringify(newName))
-    fetch(`http://localhost:1200/changename?id=${user.uuid}`, {
+    fetch(`https://nft-universe.onrender.com/changename?id=${user.uuid}`, {
             method: "PUT",
             headers: {
                 'Content-Type': "application/json",
